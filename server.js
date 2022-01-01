@@ -16,8 +16,11 @@ app.use(express.urlencoded({ extended: false }));
 // built-in middleware for json
 app.use(express.json());
 
+// Routers
+app.use('/character', require('./routes/api/character'));
+
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+  res.sendStatus(404);
 });
 
 
