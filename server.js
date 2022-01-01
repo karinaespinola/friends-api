@@ -5,7 +5,16 @@ const PORT = 3000;
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 
+// Connect to MongoDB
 connectDB();
+
+// Built-in middleware to handle urlencoded
+// in other words, form data;
+// 'CONTENT-TYPE: application/x-www-form-urlencoded'
+app.use(express.urlencoded({ extended: false }));
+
+// built-in middleware for json
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
