@@ -4,10 +4,13 @@ const app = express();
 const PORT = 3000;
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
+const cors = require('cors');
 
 // Connect to MongoDB
 connectDB();
 
+// Allow CORS 
+app.use(cors);
 // Built-in middleware to handle urlencoded
 // in other words, form data;
 // 'CONTENT-TYPE: application/x-www-form-urlencoded'
