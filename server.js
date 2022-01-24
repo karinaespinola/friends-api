@@ -10,7 +10,7 @@ const cors = require('cors');
 connectDB();
 
 // Allow CORS 
-app.use(cors);
+app.use(cors());
 // Built-in middleware to handle urlencoded
 // in other words, form data;
 // 'CONTENT-TYPE: application/x-www-form-urlencoded'
