@@ -12,4 +12,9 @@ const getSingleCharacter = async (req, res) => {
   res.status(200).json(requestedCharacter);
 }
 
-module.exports = { getSingleCharacter }
+const getAllCharacters = async (req, res) => {
+  const allCharacters = await Character.find().all();
+  res.status(200).json(allCharacters);
+}
+
+module.exports = { getSingleCharacter, getAllCharacters }
